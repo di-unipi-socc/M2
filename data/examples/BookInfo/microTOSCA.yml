@@ -1,0 +1,89 @@
+tosca_definitions_version: micro_tosca_yaml_1.2
+description: Automatically generated microTOSCA specification of bookinfo-traffic-management
+imports:
+- micro: https://di-unipi-socc.github.io/microTOSCA/microTOSCA.yaml
+topology_template:
+  node_templates:
+    ratings.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: ratings-v1
+
+    details.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: details-v1
+
+    reviews.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: reviews-v2
+
+    productpage.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: productpage-v1
+
+    details-v1:
+      type: micro.nodes.Service
+
+    reviews-v2:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: ratings.svc
+         relationship: d
+    ratings-v1:
+      type: micro.nodes.Service
+
+    productpage-v1:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: details.svc
+         relationship: td
+      - interaction:
+         node: reviews.svc
+         relationship: cd
+  groups:
+    edge:
+      type: micro.groups.Edge
+      members: [productpage.svc]
+  relationship_templates:
+    t:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+    c:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+    d:
+      type: micro.relationships.InteractsWith
+      properties:
+        dynamic_discovery: true
+    tc:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+    td:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        dynamic_discovery: true
+    cd:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+        dynamic_discovery: true
+    tcd:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+        dynamic_discovery: true

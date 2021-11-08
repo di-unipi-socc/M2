@@ -1,0 +1,218 @@
+{
+  "timestamp": 1634830359,
+  "duration": 600,
+  "graphType": "service",
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "5b6454ebd96fc9d21d492546bdc485fb",
+          "nodeType": "service",
+          "namespace": "default",
+          "service": "kubernetes",
+          "isUnused": true
+        }
+      },
+      {
+        "data": {
+          "id": "16d04f68bd507ca9b0707c2a576d1fc2",
+          "nodeType": "service",
+          "namespace": "default",
+          "app": "details",
+          "service": "details",
+          "destServices": [
+            {
+              "namespace": "default",
+              "name": "details"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.49",
+                "httpOut": "0.49"
+              }
+            }
+          ],
+          "hasVS": true
+        }
+      },
+      {
+        "data": {
+          "id": "c2efd356d9a25fd009efe2a323e12361",
+          "nodeType": "service",
+          "namespace": "default",
+          "app": "productpage",
+          "service": "productpage",
+          "destServices": [
+            {
+              "namespace": "default",
+              "name": "productpage"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.49",
+                "httpOut": "0.49"
+              }
+            }
+          ],
+          "hasVS": true
+        }
+      },
+      {
+        "data": {
+          "id": "906196769ac4714aae43f4f789a36d9c",
+          "nodeType": "service",
+          "namespace": "default",
+          "app": "ratings",
+          "service": "ratings",
+          "destServices": [
+            {
+              "namespace": "default",
+              "name": "ratings"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.49",
+                "httpOut": "0.49"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "adbe9380f23fcbefe5fedd6beb0597ef",
+          "nodeType": "service",
+          "namespace": "default",
+          "app": "reviews",
+          "service": "reviews",
+          "destServices": [
+            {
+              "namespace": "default",
+              "name": "reviews"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.49",
+                "httpOut": "0.49"
+              }
+            }
+          ],
+          "hasCB": true
+        }
+      },
+      {
+        "data": {
+          "id": "7520241c35a6eb7c61081015d83607b9",
+          "nodeType": "workload",
+          "namespace": "istio-system",
+          "workload": "istio-ingressgateway",
+          "app": "istio-ingressgateway",
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpOut": "0.49"
+              }
+            }
+          ],
+          "isOutside": true,
+          "isRoot": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "7307870f600c51c502b7acd908d1ed21",
+          "source": "7520241c35a6eb7c61081015d83607b9",
+          "target": "c2efd356d9a25fd009efe2a323e12361",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.49",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "a29c717f22385df5586c70a4cf45b9ed",
+          "source": "adbe9380f23fcbefe5fedd6beb0597ef",
+          "target": "906196769ac4714aae43f4f789a36d9c",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.49",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "a40831f944fb62c54af8f66bd97facd0",
+          "source": "c2efd356d9a25fd009efe2a323e12361",
+          "target": "16d04f68bd507ca9b0707c2a576d1fc2",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.49",
+              "httpPercentReq": "50.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "977c0cdc763de124c822fab424b2996f",
+          "source": "c2efd356d9a25fd009efe2a323e12361",
+          "target": "adbe9380f23fcbefe5fedd6beb0597ef",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.49",
+              "httpPercentReq": "50.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      }
+    ]
+  }
+}

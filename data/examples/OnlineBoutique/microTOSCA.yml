@@ -1,0 +1,195 @@
+tosca_definitions_version: micro_tosca_yaml_1.2
+description: Automatically generated microTOSCA specification of Online-Boutique
+imports:
+- micro: https://di-unipi-socc.github.io/microTOSCA/microTOSCA.yaml
+topology_template:
+  node_templates:
+    frontend.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: frontend
+
+    recommendationservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: recommendationservice
+
+    currencyservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: currencyservice
+
+
+    productcatalogservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: productcatalogservice
+
+    shippingservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: shippingservice
+
+    redis-cart.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: redis-cart
+
+    emailservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: emailservice
+
+    adservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: adservice
+
+    cartservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: cartservice
+
+    paymentservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: paymentservice
+
+    checkoutservice.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: checkoutservice
+
+    emailservice:
+      type: micro.nodes.Service
+
+    paymentservice:
+      type: micro.nodes.Service
+
+    adservice:
+      type: micro.nodes.Service
+
+    cartservice:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: redis-cart.svc
+         relationship: d
+    currencyservice:
+      type: micro.nodes.Service
+
+    frontend:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: checkoutservice.svc
+         relationship: d
+      - interaction:
+         node: productcatalogservice.svc
+         relationship: d
+      - interaction:
+         node: currencyservice.svc
+         relationship: d
+      - interaction:
+         node: recommendationservice.svc
+         relationship: d
+      - interaction:
+         node: cartservice.svc
+         relationship: d
+      - interaction:
+         node: shippingservice.svc
+         relationship: d
+      - interaction:
+         node: adservice.svc
+         relationship: d
+    loadgenerator:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: frontend.svc
+         relationship: d
+    shippingservice:
+      type: micro.nodes.Service
+
+    recommendationservice:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: productcatalogservice.svc
+         relationship: d
+    redis-cart:
+      type: micro.nodes.Datastore
+
+    checkoutservice:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: emailservice.svc
+         relationship: d
+      - interaction:
+         node: productcatalogservice.svc
+         relationship: d
+      - interaction:
+         node: currencyservice.svc
+         relationship: d
+      - interaction:
+         node: paymentservice.svc
+         relationship: d
+      - interaction:
+         node: cartservice.svc
+         relationship: d
+      - interaction:
+         node: shippingservice.svc
+         relationship: d
+    productcatalogservice:
+      type: micro.nodes.Service
+
+  groups:
+    edge:
+      type: micro.groups.Edge
+      members: [frontend.svc]
+  relationship_templates:
+    t:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+    c:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+    d:
+      type: micro.relationships.InteractsWith
+      properties:
+        dynamic_discovery: true
+    tc:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+    td:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        dynamic_discovery: true
+    cd:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+        dynamic_discovery: true
+    tcd:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+        dynamic_discovery: true

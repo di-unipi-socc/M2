@@ -1,0 +1,206 @@
+tosca_definitions_version: micro_tosca_yaml_1.2
+description: Automatically generated microTOSCA specification of robot-shop
+imports:
+- micro: https://di-unipi-socc.github.io/microTOSCA/microTOSCA.yaml
+topology_template:
+  node_templates:
+    user.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: user
+
+    ratings.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: ratings
+
+    dispatch.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: dispatch
+
+    mongodb.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: mongodb
+
+    catalogue.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: catalogue
+
+    rabbitmq.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: rabbitmq
+
+    web.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: web
+
+    cart.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: cart
+
+    payment.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: payment
+
+    shipping.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: shipping
+
+    mysql.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: mysql
+
+    redis.svc:
+      type: micro.nodes.MessageRouter
+      requirements:
+      - interaction:
+         node: redis
+
+    redis:
+      type: micro.nodes.Datastore
+
+    user:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: mongodb.svc
+         relationship: d
+      - interaction:
+         node: redis.svc
+         relationship: d
+    cart:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: catalogue.svc
+         relationship: d
+      - interaction:
+         node: redis.svc
+         relationship: d
+    mongodb:
+      type: micro.nodes.Datastore
+
+    dispatch:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: rabbitmq.svc
+         relationship: d
+    shipping:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: mysql.svc
+         relationship: d
+      - interaction:
+         node: cart.svc
+         relationship: d
+    web:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: user.svc
+         relationship: d
+      - interaction:
+         node: ratings.svc
+         relationship: d
+      - interaction:
+         node: payment.svc
+         relationship: d
+      - interaction:
+         node: shipping.svc
+         relationship: d
+      - interaction:
+         node: catalogue.svc
+         relationship: d
+      - interaction:
+         node: cart.svc
+         relationship: d
+    payment:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: user.svc
+         relationship: d
+      - interaction:
+         node: rabbitmq.svc
+         relationship: d
+    mysql:
+      type: micro.nodes.Datastore
+
+    rabbitmq:
+      type: micro.nodes.MessageBroker
+
+    ratings:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: mysql.svc
+         relationship: d
+      - interaction:
+         node: catalogue.svc
+         relationship: d
+    catalogue:
+      type: micro.nodes.Service
+      requirements:
+      - interaction:
+         node: mongodb.svc
+         relationship: d
+  groups:
+    edge:
+      type: micro.groups.Edge
+      members: [web.svc]
+  relationship_templates:
+    t:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+    c:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+    d:
+      type: micro.relationships.InteractsWith
+      properties:
+        dynamic_discovery: true
+    tc:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+    td:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        dynamic_discovery: true
+    cd:
+      type: micro.relationships.InteractsWith
+      properties:
+        circuit_breaker: true
+        dynamic_discovery: true
+    tcd:
+      type: micro.relationships.InteractsWith
+      properties:
+        timeout: true
+        circuit_breaker: true
+        dynamic_discovery: true

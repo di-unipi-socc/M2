@@ -1,0 +1,694 @@
+{
+  "timestamp": 1614443045,
+  "duration": 600,
+  "graphType": "service",
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "7520241c35a6eb7c61081015d83607b9",
+          "nodeType": "workload",
+          "namespace": "istio-system",
+          "workload": "istio-ingressgateway",
+          "app": "istio-ingressgateway",
+          "version": "unknown",
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpOut": "0.75"
+              }
+            }
+          ],
+          "isMisconfigured": "labels=[version]",
+          "isOutside": true,
+          "isRoot": true
+        }
+      },
+      {
+        "data": {
+          "id": "ab22fcd0f5ebd38a91a9067205c99d16",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "cart",
+          "service": "cart",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "cart"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.04",
+                "httpIn3xx": "0.005",
+                "httpIn4xx": "0.004",
+                "httpOut": "0.04"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "94f94af8c3c1626cacb486a3444f7472",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "catalogue",
+          "service": "catalogue",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "catalogue"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.06",
+                "httpIn3xx": "0.01",
+                "httpOut": "0.06"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "d02f1b34f18ad7d8e633bb37d1f0a65b",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "dispatch",
+          "service": "dispatch",
+          "isUnused": true
+        }
+      },
+      {
+        "data": {
+          "id": "b34ec38590e23da5db7bf9e7ba5360fe",
+          "nodeType": "workload",
+          "namespace": "robot-shop",
+          "workload": "dispatch",
+          "app": "dispatch",
+          "version": "unknown",
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpOut": "63.85"
+              }
+            }
+          ],
+          "isMisconfigured": "labels=[version]",
+          "isRoot": true
+        }
+      },
+      {
+        "data": {
+          "id": "b9d3f33825b9ee9bd02b5f48e61d91ff",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "mongodb",
+          "service": "mongodb",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "mongodb"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "110.71",
+                "tcpOut": "110.71"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "84bd63e0ee52fb007de427fbfb9d9fb3",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "mysql",
+          "service": "mysql",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "mysql"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "103.55",
+                "tcpOut": "103.55"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "4f6120581f6c5e774d2f17bb030b937b",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "payment",
+          "service": "payment",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "payment"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.005",
+                "httpIn5xx": "0.005",
+                "httpOut": "0.005"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "88314fc61e3a54d25b4f848d7f32a627",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "rabbitmq",
+          "service": "rabbitmq",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "rabbitmq"
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "0c9b9eb18116f08b7431ccc07554ee1a",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "ratings",
+          "service": "ratings",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "ratings"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.07",
+                "httpOut": "0.07"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "ebef1a064664d00dfe65c6aeb657b583",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "redis",
+          "service": "redis",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "redis"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "5.82",
+                "tcpOut": "5.82"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "6cdcb852a02812b08a769b152c87cc6e",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "shipping",
+          "service": "shipping",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "shipping"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.05",
+                "httpOut": "0.05"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "0344e9d334df23f8a3cc7238ad9350cc",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "user",
+          "service": "user",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "user"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.009",
+                "httpIn4xx": "0.002",
+                "httpOut": "0.009"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "eef158fd724008143139fd88c067db0e",
+          "nodeType": "service",
+          "namespace": "robot-shop",
+          "app": "web",
+          "service": "web",
+          "destServices": [
+            {
+              "namespace": "robot-shop",
+              "name": "web"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.75",
+                "httpIn3xx": "0.02",
+                "httpIn4xx": "0.007",
+                "httpIn5xx": "0.005",
+                "httpOut": "0.75"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "45b11e53b4263cfafc6beab34d54669e",
+          "source": "0344e9d334df23f8a3cc7238ad9350cc",
+          "target": "b9d3f33825b9ee9bd02b5f48e61d91ff",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "47.06"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "36cd41f832836c721082559799cc266d",
+          "source": "0344e9d334df23f8a3cc7238ad9350cc",
+          "target": "ebef1a064664d00dfe65c6aeb657b583",
+          "traffic": {
+            "protocol": "tcp"
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "d7855f28f1ad8f156fd6d5aa46ae8da1",
+          "source": "0c9b9eb18116f08b7431ccc07554ee1a",
+          "target": "84bd63e0ee52fb007de427fbfb9d9fb3",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "57.92"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "1938dbc7b54967413d5ae0ef55d493ee",
+          "source": "0c9b9eb18116f08b7431ccc07554ee1a",
+          "target": "94f94af8c3c1626cacb486a3444f7472",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.03",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "cc9642e362d90d6961c91ea030050589",
+          "source": "4f6120581f6c5e774d2f17bb030b937b",
+          "target": "0344e9d334df23f8a3cc7238ad9350cc",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.005",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "9f89f0d8a88e4baf289c2d3b29472061",
+          "source": "4f6120581f6c5e774d2f17bb030b937b",
+          "target": "88314fc61e3a54d25b4f848d7f32a627",
+          "traffic": {
+            "protocol": "tcp"
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "dd7235e77932ab9703d06c2b1ccdcd35",
+          "source": "6cdcb852a02812b08a769b152c87cc6e",
+          "target": "84bd63e0ee52fb007de427fbfb9d9fb3",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "45.63"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "5767aaaae5f20318c6b75eae59fcb2d7",
+          "source": "6cdcb852a02812b08a769b152c87cc6e",
+          "target": "ab22fcd0f5ebd38a91a9067205c99d16",
+          "traffic": {
+            "protocol": "http"
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "5a9259f9e885caa253ec4c40755946bc",
+          "source": "7520241c35a6eb7c61081015d83607b9",
+          "target": "eef158fd724008143139fd88c067db0e",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.75",
+              "http3xx": "0.02",
+              "http4xx": "0.007",
+              "http5xx": "0.005",
+              "httpPercentErr": "1.6",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "95.5"
+              },
+              "304": {
+                "-": "2.9"
+              },
+              "400": {
+                "-": "0.3"
+              },
+              "404": {
+                "-": "0.7"
+              },
+              "500": {
+                "-": "0.7"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "624add58d2cfdeebaf070b6557a2b80d",
+          "source": "94f94af8c3c1626cacb486a3444f7472",
+          "target": "b9d3f33825b9ee9bd02b5f48e61d91ff",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "63.65"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "81a5d03a3f8c601914b8af64d8c8efac",
+          "source": "ab22fcd0f5ebd38a91a9067205c99d16",
+          "target": "94f94af8c3c1626cacb486a3444f7472",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.01",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "b995cd430095a7cf35ea6c8dedd61498",
+          "source": "ab22fcd0f5ebd38a91a9067205c99d16",
+          "target": "ebef1a064664d00dfe65c6aeb657b583",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "5.82"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "577b2f7ad845edda4e72158ea8abad68",
+          "source": "b34ec38590e23da5db7bf9e7ba5360fe",
+          "target": "88314fc61e3a54d25b4f848d7f32a627",
+          "traffic": {
+            "protocol": "tcp"
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "160078486e371917d5b8a9409a56ef01",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "0344e9d334df23f8a3cc7238ad9350cc",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.004",
+              "http4xx": "0.002",
+              "httpPercentErr": "50.0",
+              "httpPercentReq": "2.2"
+            },
+            "responses": {
+              "200": {
+                "-": "50.0"
+              },
+              "404": {
+                "-": "50.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "cd4d38a0bbf8409ec9f491d85ff66342",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "0c9b9eb18116f08b7431ccc07554ee1a",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.07",
+              "httpPercentReq": "37.8"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "478eef7f5a7d5171cd25917a602fa9fd",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "4f6120581f6c5e774d2f17bb030b937b",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.005",
+              "http5xx": "0.005",
+              "httpPercentErr": "100.0",
+              "httpPercentReq": "2.7"
+            },
+            "responses": {
+              "500": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "2b6269d0c884534c7b5ad1e98dc5647b",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "6cdcb852a02812b08a769b152c87cc6e",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.05",
+              "httpPercentReq": "26.5"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "db0a0fc9fbc298c7384a42ac3450c804",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "94f94af8c3c1626cacb486a3444f7472",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.02",
+              "http3xx": "0.01",
+              "httpPercentReq": "11.9"
+            },
+            "responses": {
+              "200": {
+                "-": "45.5"
+              },
+              "304": {
+                "-": "54.5"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      },
+      {
+        "data": {
+          "id": "a4fda37293c3cea5adcd44785aa4871d",
+          "source": "eef158fd724008143139fd88c067db0e",
+          "target": "ab22fcd0f5ebd38a91a9067205c99d16",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.04",
+              "http3xx": "0.005",
+              "http4xx": "0.004",
+              "httpPercentErr": "11.4",
+              "httpPercentReq": "18.9"
+            },
+            "responses": {
+              "200": {
+                "-": "74.3"
+              },
+              "304": {
+                "-": "14.3"
+              },
+              "400": {
+                "-": "5.7"
+              },
+              "404": {
+                "-": "5.7"
+              }
+            }
+          },
+          "isMTLS": "100"
+        }
+      }
+    ]
+  }
+}

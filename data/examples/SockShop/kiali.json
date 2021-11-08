@@ -1,0 +1,699 @@
+{
+  "timestamp": 1576322227,
+  "duration": 600,
+  "graphType": "service",
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "1d53db6045cf7084c4fedc9f5124cd97",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "carts",
+          "service": "carts",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "carts"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.72",
+                "httpOut": "0.72"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "57b7863199a1d01e0b458e2b2f47be02",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "carts-db",
+          "service": "carts-db",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "carts-db"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "1498.21",
+                "tcpOut": "1498.21"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "5608cddf28fef22ea1218953d20cf3da",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "catalogue",
+          "service": "catalogue",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "catalogue"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.48",
+                "httpOut": "0.48"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "c6ffea0bcc68b61b3f88484c7c2debd9",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "catalogue-db",
+          "service": "catalogue-db",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "catalogue-db"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "1147.47",
+                "tcpOut": "1147.47"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "8f8500368913fecf89b1e775dceead4b",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "front-end",
+          "service": "front-end",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "front-end"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "2.34",
+                "httpIn4xx": "0.02",
+                "httpOut": "2.34"
+              }
+            }
+          ],
+          "hasVS": true
+        }
+      },
+      {
+        "data": {
+          "id": "9834d4a1af7a46234d23208da0a17ca7",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "orders",
+          "service": "orders",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "orders"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.13",
+                "httpIn4xx": "0.02",
+                "httpOut": "0.13"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "988834f58a5713bb7f5d9216648e10e8",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "orders-db",
+          "service": "orders-db",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "orders-db"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "922.80",
+                "tcpOut": "922.80"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "4f5b41cebaf3044f34f1cf8664fe432f",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "payment",
+          "service": "payment",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "payment"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.13",
+                "httpOut": "0.13"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "e599d0c506e1d5f38e91ed073d3ed0b0",
+          "nodeType": "workload",
+          "namespace": "sock-shop",
+          "workload": "queue-master",
+          "app": "queue-master",
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpOut": "30.02"
+              }
+            }
+          ],
+          "isRoot": true
+        }
+      },
+      {
+        "data": {
+          "id": "6ead10681c5b8d7c7537b8f3f54bb3ab",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "queue-master",
+          "service": "queue-master",
+          "isUnused": true
+        }
+      },
+      {
+        "data": {
+          "id": "ad0e9323838c1f5f4b2a4b71feb83c3a",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "rabbitmq",
+          "service": "rabbitmq",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "rabbitmq"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "30.16",
+                "tcpOut": "30.16"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "09b61c03d89ce66c4976a5a3759fe1da",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "session-db",
+          "service": "session-db",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "session-db"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "100.00",
+                "tcpOut": "100.00"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "91bffc444db5b4800beb4b7f9353afd8",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "shipping",
+          "service": "shipping",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "shipping"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "0.12",
+                "httpOut": "0.12"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "1bdc064aa42f64a4514841815f63297c",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "user",
+          "service": "user",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "user"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpIn": "1.04",
+                "httpOut": "1.04"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "63b6237bf170de35a8864ce34377d531",
+          "nodeType": "service",
+          "namespace": "sock-shop",
+          "app": "user-db",
+          "service": "user-db",
+          "destServices": [
+            {
+              "namespace": "sock-shop",
+              "name": "user-db"
+            }
+          ],
+          "traffic": [
+            {
+              "protocol": "tcp",
+              "rates": {
+                "tcpIn": "1265.41",
+                "tcpOut": "1265.41"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "data": {
+          "id": "b30b0078325bf2e1adb4d57c4c0c2665",
+          "nodeType": "unknown",
+          "namespace": "unknown",
+          "workload": "unknown",
+          "app": "unknown",
+          "version": "unknown",
+          "traffic": [
+            {
+              "protocol": "http",
+              "rates": {
+                "httpOut": "2.34"
+              }
+            }
+          ],
+          "isInaccessible": true,
+          "isRoot": true
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e5fa61b545e85596afe48fd6cbc37d76",
+          "source": "1bdc064aa42f64a4514841815f63297c",
+          "target": "63b6237bf170de35a8864ce34377d531",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "1265.41"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "718ae92360010e06537db7f9efc55f77",
+          "source": "1d53db6045cf7084c4fedc9f5124cd97",
+          "target": "57b7863199a1d01e0b458e2b2f47be02",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "1498.21"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "c7f06bf3d4f43c4d3287b6ce00c5e44b",
+          "source": "5608cddf28fef22ea1218953d20cf3da",
+          "target": "c6ffea0bcc68b61b3f88484c7c2debd9",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "1147.47"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "f390988bcb929fb0c78047f390e5a615",
+          "source": "8f8500368913fecf89b1e775dceead4b",
+          "target": "09b61c03d89ce66c4976a5a3759fe1da",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "100.00"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "ee663bd4698a62a2fe703ac4e612bb1a",
+          "source": "8f8500368913fecf89b1e775dceead4b",
+          "target": "1bdc064aa42f64a4514841815f63297c",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.64",
+              "httpPercentReq": "34.9"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "efe384f53299ca62cc7b59c22632d29b",
+          "source": "8f8500368913fecf89b1e775dceead4b",
+          "target": "1d53db6045cf7084c4fedc9f5124cd97",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.59",
+              "httpPercentReq": "31.8"
+            },
+            "responses": {
+              "201": {
+                "-": "28.0"
+              },
+              "202": {
+                "-": "72.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "17b80848f34f934e45e185108b5a5869",
+          "source": "8f8500368913fecf89b1e775dceead4b",
+          "target": "5608cddf28fef22ea1218953d20cf3da",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.48",
+              "httpPercentReq": "26.1"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "98caf2afc4293b8741f547ed3aa7248b",
+          "source": "8f8500368913fecf89b1e775dceead4b",
+          "target": "9834d4a1af7a46234d23208da0a17ca7",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.13",
+              "http4xx": "0.02",
+              "httpPercentErr": "12.9",
+              "httpPercentReq": "7.2"
+            },
+            "responses": {
+              "201": {
+                "-": "87.1"
+              },
+              "406": {
+                "-": "12.9"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "776dd4e3e9dfc6dd8213ba43c5302ee9",
+          "source": "91bffc444db5b4800beb4b7f9353afd8",
+          "target": "ad0e9323838c1f5f4b2a4b71feb83c3a",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "0.14"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "bdcb7f3a3fec4735cb5bb632660aeb70",
+          "source": "9834d4a1af7a46234d23208da0a17ca7",
+          "target": "1bdc064aa42f64a4514841815f63297c",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.40",
+              "httpPercentReq": "51.0"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "957b9a53bccf9e5a82d9d2859451b521",
+          "source": "9834d4a1af7a46234d23208da0a17ca7",
+          "target": "1d53db6045cf7084c4fedc9f5124cd97",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.13",
+              "httpPercentReq": "17.1"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "000364b84e9372284333f02f63d3b800",
+          "source": "9834d4a1af7a46234d23208da0a17ca7",
+          "target": "4f5b41cebaf3044f34f1cf8664fe432f",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.13",
+              "httpPercentReq": "17.1"
+            },
+            "responses": {
+              "200": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "4c89da052ac715135d670a8594cc7630",
+          "source": "9834d4a1af7a46234d23208da0a17ca7",
+          "target": "91bffc444db5b4800beb4b7f9353afd8",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "0.12",
+              "httpPercentReq": "14.9"
+            },
+            "responses": {
+              "201": {
+                "-": "100.0"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "69910dc47aa3205b7b33a915a7ee315c",
+          "source": "9834d4a1af7a46234d23208da0a17ca7",
+          "target": "988834f58a5713bb7f5d9216648e10e8",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "922.80"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      },
+      {
+        "data": {
+          "id": "3cf01fbf77930e41cc4f77f9c058628e",
+          "source": "b30b0078325bf2e1adb4d57c4c0c2665",
+          "target": "8f8500368913fecf89b1e775dceead4b",
+          "traffic": {
+            "protocol": "http",
+            "rates": {
+              "http": "2.34",
+              "http4xx": "0.02",
+              "httpPercentErr": "0.7",
+              "httpPercentReq": "100.0"
+            },
+            "responses": {
+              "200": {
+                "-": "79.9"
+              },
+              "201": {
+                "-": "11.9"
+              },
+              "202": {
+                "-": "7.4"
+              },
+              "406": {
+                "-": "0.7"
+              }
+            }
+          },
+          "isMTLS": "0"
+        }
+      },
+      {
+        "data": {
+          "id": "fcb38b21ed73d9040130fb30a99599ba",
+          "source": "e599d0c506e1d5f38e91ed073d3ed0b0",
+          "target": "ad0e9323838c1f5f4b2a4b71feb83c3a",
+          "traffic": {
+            "protocol": "tcp",
+            "rates": {
+              "tcp": "30.02"
+            },
+            "responses": {
+              "-": {
+                "-": "100.0"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
