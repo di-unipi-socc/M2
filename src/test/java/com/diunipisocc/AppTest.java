@@ -1,4 +1,4 @@
-package com.km;
+package com.diunipisocc;
 
 import static org.junit.Assert.assertTrue;
 

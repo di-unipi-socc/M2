@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.km"},{"l":"com.km.graph"},{"l":"com.km.graph.deployment"},{"l":"com.km.graph.kubeservice"},{"l":"com.km.parsers"},{"l":"com.km.refiner"},{"l":"com.km.writer"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.diunipisocc.m2"},{"l":"com.diunipisocc.m2.graph"},{"l":"com.diunipisocc.m2.graph.deployment"},{"l":"com.diunipisocc.m2.graph.kubeservice"},{"l":"com.diunipisocc.m2.parsers"},{"l":"com.diunipisocc.m2.refiner"},{"l":"com.diunipisocc.m2.writer"}]

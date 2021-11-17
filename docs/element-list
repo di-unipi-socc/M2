@@ -1,7 +1,8 @@
-com.km
-com.km.graph
-com.km.graph.deployment
-com.km.graph.kubeservice
-com.km.parsers
-com.km.refiner
-com.km.writer
+com.diunipisocc
+com.diunipisocc.m2
+com.diunipisocc.m2.graph
+com.diunipisocc.m2.graph.deployment
+com.diunipisocc.m2.graph.kubeservice
+com.diunipisocc.m2.parsers
+com.diunipisocc.m2.refiner
+com.diunipisocc.m2.writer
