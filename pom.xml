@@ -68,7 +68,7 @@
 					<configuration>
 						<archive>
 							<manifest>
-								<mainClass>com.km.M2Miner</mainClass>
+								<mainClass>com.diunipisocc.m2.M2Miner</mainClass>
 							</manifest>
 						</archive>
 
@@ -108,7 +108,7 @@
 							<manifest>
 
 								<!-- give full qualified name of your main class -->
-								<mainClass>com.km.M2Miner</mainClass>
+								<mainClass>com.diunipisocc.m2.M2Miner</mainClass>
 
 							</manifest>
 						</archive>
