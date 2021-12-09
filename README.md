@@ -25,7 +25,7 @@ Ordering the above command results in creation of a `target` folder which contai
 ### d) Running microTOM:
 The generated `microTOM-1.0.JAR` can then be run as follows (assuming the main project folder being the current working directory):
 ```java
-$ java -jar target/M2Miner-1.0.jar <workDir> [-i]
+$ java -jar target/microTOM-1.0.jar <workDir> [-i]
 ```
 where `workDir` is the path to a folder containing all the necessary input files (i.e., Kubernetes manifests and Kiali's graph data JSON file) for microTOM, whilst the option `-i` enables activating the interactive node refinement.
 The microTOSCA specification output file will be generated and stored in the same `workDir`. An example of such a file is available [here](./data/examples/OnlineBoutique/microTOSCA.yml) in case of Online Boutique application.
