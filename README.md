@@ -1,5 +1,5 @@
 # Mining the Architecture of Microservice-based Applications
-![](BirdEye.png)
+![](data/meta/BirdEye.png)
 M<sup>2</sup> is a tool for mining the architecture of microservice-based applications from their [Istio](https://istio.io/latest/) and [Kiali](https://kiali.io/) enabled Kubernetes deployment. M<sup>2</sup> generates the [microTOSCA](https://github.com/di-unipi-socc/microTOSCA) specifications of the architecture of the application which represent the architecture of the application as topology graph where nodes are services, databases and integration patterns that form the application, and arcs represent interactions between node components of the application. The generated specifications which is in YAML format then can be imported by [microFreshner](https://github.com/di-unipi-socc/microFreshener) for visualizing, analyzing and also refactoring. 
 
 
