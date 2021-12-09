@@ -6,7 +6,7 @@ import java.util.List;
 
 import diunipisocc.microTOM.graph.Edge;
 import diunipisocc.microTOM.graph.JsService;
-import diunipisocc.microTOM.graph.deployment.*;
+import diunipisocc.microTOM.graph.deployment.Deployment;
 import diunipisocc.microTOM.graph.kubeservice.KubService;
 import diunipisocc.microTOM.parsers.DeploymentYamlParser;
 import diunipisocc.microTOM.parsers.EdgeParser;
