@@ -39,42 +39,45 @@ public class InteractiveRefiner implements NodeRefiner {
 						System.out.println("  1 . Datastore ");
 						System.out.println("  2 . MessageBroker");
 						System.out.println("  3 . None of the aboves (Service)");
-						Scanner scanner = new Scanner(System.in);
-						String input = scanner.nextLine();
-						if (isNumber(input)) {
+						try (Scanner scanner = new Scanner(System.in)) {
+							String input = scanner.nextLine();
+							if (isNumber(input)) {
 
-							switch (Integer.parseInt(input)) {
+								switch (Integer.parseInt(input)) {
 
-							case 1:
-								deployment.setType("Datastore");
-								System.out.println("'" + name + "' is set to be a Datastore.");
-								System.out.println();
-								ok = true;
-								break;
+								case 1:
+									deployment.setType("Datastore");
+									System.out.println("'" + name + "' is set to be a Datastore.");
+									System.out.println();
+									ok = true;
+									break;
 
-							case 2:
-								deployment.setType("MessageBroker");
-								System.out.println("'" + name + "' is set to be a MessageBroker.");
-								System.out.println();
-								ok = true;
-								break;
+								case 2:
+									deployment.setType("MessageBroker");
+									System.out.println("'" + name + "' is set to be a MessageBroker.");
+									System.out.println();
+									ok = true;
+									break;
 
-							case 3:
-								// it's a service by default.
-								System.out.println("'" + name + "' is set to be a Service.");
-								System.out.println();
-								ok = true;
-								break;
+								case 3:
+									// it's a service by default.
+									System.out.println("'" + name + "' is set to be a Service.");
+									System.out.println();
+									ok = true;
+									break;
 
-							default:
-								// The input may not be correspond to any option given.
-								System.out.println(" The input is Invalid! Try again Please...");
-								break;
+								default:
+									// The input may not be correspond to any option given.
+									System.out.println(" The input is Invalid! Try again Please...");
+									break;
+								}
+
+							} else {
+
+								System.out.println("Please Enter an Input! / The input must be a digit!");
 							}
-
-						} else {
-
-							System.out.println("Please Enter an Input! / The input must be a digit!");
+						} catch (NumberFormatException e) {
+							e.printStackTrace();
 						}
 					}// End of while
 					
