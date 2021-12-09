@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.diunipisocc.m2"},{"l":"com.diunipisocc.m2.graph"},{"l":"com.diunipisocc.m2.graph.deployment"},{"l":"com.diunipisocc.m2.graph.kubeservice"},{"l":"com.diunipisocc.m2.parsers"},{"l":"com.diunipisocc.m2.refiner"},{"l":"com.diunipisocc.m2.writer"}]
